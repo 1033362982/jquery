@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="猜数字" id="btn">
+	<script src="script/jquery.js"></script>
+	<script>
+		var num=Math.floor(Math.random()*10);
+		$("#btn").click(function(){
+			var target=$("#txt").val();
+			if(target>num){
+				alert("数组数字大于结果");
+			}else if(target<num){
+				alert("数组数字小于结果");
+			}else if(target==num){
+				alert("恭喜你，回答正确");
+			}
+			num=Math.floor(Math.random()*10);/*每比较完一次取新的随机数进行比较*/
+		})
+	</script>
+</body>
+</html>

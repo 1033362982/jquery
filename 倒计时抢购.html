@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.red{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<span id="d"></span>日
+	<span id="h"></span>小时
+	<span id="m"></span>分钟
+	<span id="s"></span>秒
+	<input type="button" value="时间已到，开始抢购" id="btn">
+	<script src="script/jquery.js"></script>
+	<script>
+		
+		
+		function setSeconds(){
+			var strtime="2016-7-19 14:28:59";
+			var timeTarget=new Date(strtime);
+			var target=timeTarget.getTime();
+			var timeNow=new Date();
+			var time=timeNow.getTime();
+			var result=target-time;
+			var day=Math.floor(result/86400000);
+			var r1=(result%86400000);
+			var hours=Math.floor(r1/3600000);
+			var r2=r1%(3600000);
+			var minutes=Math.floor(r2/60000);
+			var r3=r2%(60000);
+			var seconds=Math.floor(r3/1000);
+			var r4=r3%(1000);
+			$("#d").text(day)
+			$("#h").text(hours)
+			$("#m").text(minutes)
+			$("#s").text(seconds)
+			if(day==0,hours==0,minutes==0,seconds==0){
+				$("#btn").addClass("red")
+				$("#btn").click(function(){
+				location.href="http://www.baidu.com"
+				})
+				clearInterval(t)
+			}
+		}
+		var t=setInterval(setSeconds,1000)
+
+	</script>
+</body>
+</html>

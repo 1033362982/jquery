@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<input id="str1" type="text">+
+		<input id="str2" type="text">=
+		<input id="result" type="text">
+		<input id="btn" type="button" value="连接">
+	</form>
+	<script src="script/jquery.js"></script>
+	<script>
+		$("#btn").click(function(){
+			var str1 = $("#str1").val();
+			var str2 = $("#str2").val();
+			
+			// var result = str1 + str2;
+
+			var result = Number(str1) + Number(str2);
+			$("#result").val(result);
+		})
+	</script>
+</body>
+</html>

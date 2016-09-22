@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#num-list li{
+			list-style: none;
+			text-align: center;
+			width: 20px;
+			height: 20px;
+			border:1px solid red;
+			line-height: 20px;
+			float: left;
+			cursor:pointer;
+		}
+		#num-list .active{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<img id="pic"src="images/0.jpg" alt="">
+	<ul id="num-list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+		$("#num-list li").click(function(){
+			var ind = $(this).index();     //获取索引
+			var src = "images/" + ind + ".jpg";
+			$("#pic").attr("src",src);
+			// $(this).css("background-color","#f00").siblings().css("background-color","#fff")
+			$(this).addClass("active").siblings().removeClass("active");
+		});
+		
+	</script>
+</body>
+</html>

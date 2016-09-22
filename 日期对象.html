@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span id="year"></span>年
+	<span id="month"></span>月
+	<span id="date"></span>日
+	<span id="hours"></span>：
+	<span id="minutes"></span>：
+	<span id="seconds"></span>
+	<script src="script/jquery.js"></script>
+	<script>
+		var today=new Date();
+		var year=today.getFullYear();
+		var month=today.getMonth();
+		var Day=today.getDay();
+		var hours=today.getHours();
+		var minutes=today.getMinutes();
+		var seconds=today.getSeconds();
+		var time=today.getTime();
+		$("#year").text(year);
+		$("#month").text(month);
+		$("#date").text(Day);
+		$("#hours").text(hours);
+		$("#minutes").text(minutes);
+		$("#seconds").text(seconds);
+
+	</script>
+</body>
+</html>
